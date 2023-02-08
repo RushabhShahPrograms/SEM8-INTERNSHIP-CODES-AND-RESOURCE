@@ -24,20 +24,11 @@ void main()
     printf("\nEnter number which you want to search in table: ");
     scanf("%d",&s_key);
     
-    for(i=0;i<size;i++)
-    {
-        printf("\nEnter the Value for element[%d]: ",i+1);
-        scanf("%d",&a[i]);
-    }
-    
-    printf("\nEnter number which you want to search in table: ");
-    scanf("%d",&s_key);
-    
     low=0;
-    high=size;
+    high=size-1;
     while(low<=high)
     {
-        mid = (low+high)/2;
+        mid = low+(high-low)/2;
         if(a[mid]==s_key)
         {
             printf("\n The number is at location [%d]",mid+1);
