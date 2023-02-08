@@ -70,5 +70,24 @@ void calculateMarkSheet(int i)
 {
     s[i].total=s[i].maths+s[i].eng+s[i].comp;
     s[i].per=s[i].total/3;
-    if(s[i]
+    if(s[i].per>=90)
+    {
+        s[i].grade='A'
+    }
+    else
+    {
+        s[i].grade='B';
+    }
+}
+
+
+void displayStudentDetails()
+{
+    int i;
+    printf("\nsid\tname\tfees\tcomp\tmaths\ttotal\tper\tgrade\n");
+    for(i=0;i<SIZE;i++)
+    {
+        printf("\n%d\t%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%c",s[i].sid,
+        s[i].name,s[i].fees,s[i].comp,s[i].comp,s[i].maths,s[i].total,s[i].per,s[i].grade);
+    } 
 }
