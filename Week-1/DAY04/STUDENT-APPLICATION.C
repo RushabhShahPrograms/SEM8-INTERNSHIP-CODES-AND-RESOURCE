@@ -66,3 +66,9 @@ void scanStudentDetails()
     }
 }
 
+void calculateMarkSheet(int i)
+{
+    s[i].total=s[i].maths+s[i].eng+s[i].comp;
+    s[i].per=s[i].total/3;
+    if(s[i]
+}
