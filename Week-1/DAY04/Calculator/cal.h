@@ -1,8 +1,3 @@
-/*
-Author: Rushabh Shah
-Date of Creation: 8th Feb 2023
-Subject: Calculator head file
-*/
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
@@ -186,11 +181,64 @@ void militomicro()
 
 void areaofcircle();
 {
-    
+    float pie = 3.14;
+    int radius;
+    printf("\nEnter radius of circle: ");
+    scanf("%d",&radius);
+    float area = (float)(pie* (pow(radius,2)));
+    printf("\nThe area of the given circle is %f", area);
 }
 void areaofrectangle();
+{
+    float length,breadth;
+    float area;
+    printf("\nEnter the Length of a Rectangle : ");
+    scanf("%f",&length);
+    printf("\nEnter the Breadth of a Rectangle : ");
+    scanf("%f",&breadth);
+    area = length * breadth;
+    printf("\nArea of Rectangle is : %f",area);
+}
 void areaofcylinder();
+{
+    float r, h, surfacearea;  
+    printf("\nEnter values of radius and height: ");
+    scanf("%f%f",&r,&h);
+    surfacearea = (2*22*(r + h))/7;  
+    printf("\nSurface Area of Cylinder is : %f",surfacearea);  
+}
 void areaoftriangle();
+{
+    float b ,h, area;  
+    printf("\nEnter values of base and height: ");
+    scanf("%f%f",&b,&h);
+    area = (b*h)/2 ;
+    printf("\nArea of Triangle is: %f",area);  
+}
 void areaofrhombus();
+{
+    float area, side, p, q;
+    printf("\nEnter the length of side and a diagonal");  
+    scanf("%f%f", &side, &p);  
+    q = sqrt((4 * side * side) - (p * p));  
+    area = (p * q) * 0.5;
+    printf("\nArea of the Rhombus is %f", area);
+}
 void areaoftrapezium();
+{
+    float base1, base2, height, Area, Median;
+    printf("\n Please Enter two bases and height of the trapezium: ");
+    scanf("%f%f%f", &base1, &base2, &height);
+    Area = 0.5 * (base1 + base2) * height;
+    Median = 0.5 * (base1+ base2);
+    printf("\n Area of a trapezium = %.2f", Area);
+    printf("\n Median of a trapezium = %.2f", Median);
+}
 void areaofsquare();
+{
+    int s;
+    printf("\nEnter the value of sides: ");
+    scanf("%d",&s);
+    int area_square=s*s;  
+    printf("Area of the square=%d",area_square); 
+}
