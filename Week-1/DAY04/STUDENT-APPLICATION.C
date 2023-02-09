@@ -1,6 +1,14 @@
+/*
+Name: Rushabh Shah
+Date of Creation: 9th Feb 2023
+Subject: To Create student application
+Description: In student application we can add,display,search,update the marks and 
+             also delete the marks of the student if required. 
+             Currently This code will scan 10 details of students and can be modified if required more than 10 students.
+*/
 #include<stdio.h>
 #include<conio.h>
-#define SIZE 2
+#define SIZE 10
 
 struct Student
 {
@@ -11,6 +19,7 @@ struct Student
     int flag;
 }s[SIZE];
 
+//declaration of the functions
 
 void scanStudentDetails();
 void displayStudentDetails();
@@ -19,7 +28,7 @@ int search(int id);
 void update(int id);
 void displayParticular(int index);
 void del(int id);
-
+//declaration of the functions end
 
 
 void main()
@@ -70,20 +79,22 @@ void main()
             default: printf("\nInvalid Choice");
         } //End of Switch
         getch();
-    }
-}
+    } //end of while
+} //end of main
 
 
 
 
-
+//Scan Students Details Method
 void scanStudentDetails()
 {
     float temp,i;
     for(i=0;i<SIZE;i++)
     {
         printf("\nEnter the sid: ");
-        scanf("%d%s",&s[i].sid,s[i].name);
+        scanf("%d",&s[i].sid);
+        printf("\nEnter the name: ");
+        scanf("%s",&s[i].name);
         printf("\nEnter the fees: ");
         scanf("%f",&temp);
         s[i].fees=temp;
@@ -99,13 +110,15 @@ void scanStudentDetails()
     }
 }
 
+
+//Calculate Marks of Student Method
 void calculateMarkSheet(int i)
 {
     s[i].total=s[i].maths+s[i].eng+s[i].comp;
     s[i].per=s[i].total/3;
     if(s[i].per>=90)
     {
-        s[i].grade='A'
+	s[i].grade='A';
     }
     else
     {
@@ -114,6 +127,7 @@ void calculateMarkSheet(int i)
 }
 
 
+//Display Student Details Method
 void displayStudentDetails()
 {
     int i;
@@ -129,6 +143,7 @@ void displayStudentDetails()
 }
 
 
+//Searching Method to Search Particular Student's Details Using ID value
 int search(int id)
 {
     int i;
@@ -144,17 +159,21 @@ int search(int id)
     return found;
 }
 
+
+//Display Details of Particular
 void displayParticular(int index)
 {
     clrscr();
     if(s[index].flag==1)
     {
-        printf("\nsid\tname\tfees\tcomp\tmaths\ttotal\tper\tgrade\n");
-        printf("\n%d\t%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%c",s[i].sid,
-        s[i].name,s[i].fees,s[i].comp,s[i].maths,s[i].total,s[i].per,s[i].grade);
+	printf("\nsid\tname\tfees\tcomp\tmaths\ttotal\tper\tgrade\n");
+	printf("\n%d\t%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%c",s[index].sid,
+	s[index].name,s[index].fees,s[index].comp,s[index].maths,s[index].total,s[index].per,s[index].grade);
     }
 }
 
+
+//Update Method for updating name,fees,marks.
 void update(int id)
 {
     int index=-1,choice,choice1;
@@ -223,7 +242,7 @@ void update(int id)
                             s[index].eng=temp;
                             printf("\nEnter the new Maths Marks: ");
                             scanf("%f",&temp);
-                            s[index].math=temp;
+			    s[index].maths=temp;
                             printf("\nEnter the new Computer Marks: ");
                             scanf("%f",&temp);
                             s[index].comp=temp;
@@ -252,6 +271,7 @@ void update(int id)
 }
 
 
+//Delete Method For deleting particular student using ID
 void del(int id)
 {
     int index=-1;
