@@ -13,8 +13,8 @@ void main()
   int num,i;
   clrscr();
   
-  fp1=fopen("even.txt","w");
-  fp2=fopen("odd.txt","w");
+  fp1=fopen("even.txt","w+");
+  fp2=fopen("odd.txt","w+");
   for(i=0;i<10;i++)
   {
     printf("\nEnter the number");
@@ -28,10 +28,15 @@ void main()
       putw(num,fp2);
     }
   }
-  fclose(fp1);
-  fclose(fp2);
-  fp1=fopen("even.txt","r");
-  fp2=fopen("odd.txt","r");
+  
+  printf("\nThe cursor is at %d place",ftell(fp1));
+  printf("\nThe cursor is at %d place",ftell(fp2));
+  fseek(fp1,0L,SEEK_SET); //SEEK_CUR SEEK_END SEEK_SET
+  fseek(fp2,0L,SEEK_SET);
+  printf("\nThe cursor is at %d place",ftell(fp1));
+  printf("\nThe cursor is at %d place",ftell(fp2));
+  getch();
+  clrscr();
   printf("\nThe even numbers are as follows: ");
   while(num=getw(fp1))!=EOF)
   {
