@@ -1,3 +1,8 @@
+/*
+Author: Rushabh Shah
+Date of Creation: 9th Feb 2023
+Subject: How to strong string in the file
+*/
 #include<stdio.h>
 #include<conio.h>
 
