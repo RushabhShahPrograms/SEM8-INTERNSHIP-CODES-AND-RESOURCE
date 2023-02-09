@@ -21,14 +21,29 @@ void scan()
   {
     printf("\nEnter the sid and name: ");
     scanf("%d%s",&s[i].sid,s[i].name);
-    fwrite(&s[i],sizeof(s[i],1,fp);
+    fwrite(&s[i],sizeof(s[i]),1,fp);
   }
-  fclose();
+  fclose(fp);
 }
            
 void display()
-           {
-             clrscr();
-             
-           }
-           \
+{
+ FILE *fp;
+ clrscr();
+ int i;
+ printf("\nsid\tname");
+ fp=fopen("student.txt","r");
+ for(i=0;i<2;i++)
+ {
+  fread(&s[i],sizeof(s[i]),1,fp);
+  printf("\n%d\t%s",s[i].sid,s[i].sname);
+ }
+ fclose(fp);
+}
+
+void main()
+{
+  //scan();
+  display();
+  getch();
+}
