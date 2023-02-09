@@ -88,7 +88,9 @@ void main()
 //Scan Students Details Method
 void scanStudentDetails()
 {
+    FILE *fp;
     float temp,i;
+    fp=fopen("student.txt","w");
     for(i=0;i<SIZE;i++)
     {
         printf("\nEnter the sid: ");
@@ -107,7 +109,9 @@ void scanStudentDetails()
         s[i].maths=temp;
         calculateMarkSheet(i);
         s[i].flag=1;
+	fwrite(&s[i],sizeof(s[i]),1,fp);
     }
+    fclose(fp);
 }
 
 
@@ -130,7 +134,9 @@ void calculateMarkSheet(int i)
 //Display Student Details Method
 void displayStudentDetails()
 {
+    FILE *fp;
     int i;
+    fp=fopen("student.txt","r");
     printf("\nsid\tname\tfees\tcomp\tmaths\ttotal\tper\tgrade\n");
     for(i=0;i<SIZE;i++)
     {
@@ -139,7 +145,8 @@ void displayStudentDetails()
             printf("\n%d\t%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%c",s[i].sid,
         s[i].name,s[i].fees,s[i].comp,s[i].maths,s[i].total,s[i].per,s[i].grade);
         }
-    } 
+    }
+    fclose(fp);
 }
 
 
