@@ -1,3 +1,8 @@
+/*
+Author: Rushabh Shah
+Date of Creation: 9th Feb 2023
+Subject: Pointers
+*/
 #include<stdio.h>
 #include<conio.h>
 
