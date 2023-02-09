@@ -120,7 +120,7 @@ void kgtogm()
 	printf("\nGram: %0.2f",g);
 }
 
-void ltoml();
+void ltoml()
 {
 	float l,ml;
 	printf("\nEnter the litre: ");
@@ -160,7 +160,7 @@ void foottoinch()
     printf("\nPlease enter feet: ");
     scanf("%d",&feet);
     inch = 12 * feet;
-    printf ("Value in Inch is: %.2f \n", inch); 
+    printf ("Value in Inch is: %.2f \n", inch);
 }
 void miletoyard()
 {
@@ -168,7 +168,7 @@ void miletoyard()
 	printf("\nEnter Miles: ");
 	scanf("%f",&mile);
 	yard=mile*1760;
-	printf("\nYards: %.02f",mile);
+	printf("\nYards: %.02f",yard);
 }
 void militomicro()
 {
@@ -179,16 +179,16 @@ void militomicro()
 	printf("\nMicrometres: %.02f",micro);
 }
 
-void areaofcircle();
+void areaofcircle()
 {
     float pie = 3.14;
-    int radius;
+    float radius,area;
     printf("\nEnter radius of circle: ");
-    scanf("%d",&radius);
-    float area = (float)(pie* (pow(radius,2)));
+    scanf("%f",&radius);
+    area = (pie* (pow(radius,2)));
     printf("\nThe area of the given circle is %f", area);
 }
-void areaofrectangle();
+void areaofrectangle()
 {
     float length,breadth;
     float area;
@@ -199,32 +199,32 @@ void areaofrectangle();
     area = length * breadth;
     printf("\nArea of Rectangle is : %f",area);
 }
-void areaofcylinder();
+void areaofcylinder()
 {
-    float r, h, surfacearea;  
+    float r, h, surfacearea;
     printf("\nEnter values of radius and height: ");
     scanf("%f%f",&r,&h);
-    surfacearea = (2*22*(r + h))/7;  
-    printf("\nSurface Area of Cylinder is : %f",surfacearea);  
+    surfacearea = (2*22*(r + h))/7;
+    printf("\nSurface Area of Cylinder is : %f",surfacearea);
 }
-void areaoftriangle();
+void areaoftriangle()
 {
-    float b ,h, area;  
+    float b ,h, area;
     printf("\nEnter values of base and height: ");
     scanf("%f%f",&b,&h);
     area = (b*h)/2 ;
-    printf("\nArea of Triangle is: %f",area);  
+    printf("\nArea of Triangle is: %f",area);
 }
-void areaofrhombus();
+void areaofrhombus()
 {
     float area, side, p, q;
-    printf("\nEnter the length of side and a diagonal");  
-    scanf("%f%f", &side, &p);  
-    q = sqrt((4 * side * side) - (p * p));  
+    printf("\nEnter the length of side and a diagonal");
+    scanf("%f%f", &side, &p);
+    q = sqrt((4 * side * side) - (p * p));
     area = (p * q) * 0.5;
     printf("\nArea of the Rhombus is %f", area);
 }
-void areaoftrapezium();
+void areaoftrapezium()
 {
     float base1, base2, height, Area, Median;
     printf("\n Please Enter two bases and height of the trapezium: ");
@@ -234,11 +234,11 @@ void areaoftrapezium();
     printf("\n Area of a trapezium = %.2f", Area);
     printf("\n Median of a trapezium = %.2f", Median);
 }
-void areaofsquare();
+void areaofsquare()
 {
-    int s;
+    int s,area_square;
     printf("\nEnter the value of sides: ");
     scanf("%d",&s);
-    int area_square=s*s;  
-    printf("Area of the square=%d",area_square); 
+    area_square=s*s;
+    printf("Area of the square=%d",area_square);
 }
