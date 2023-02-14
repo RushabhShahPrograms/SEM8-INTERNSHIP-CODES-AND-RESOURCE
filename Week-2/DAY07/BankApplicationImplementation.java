@@ -105,7 +105,7 @@ class Bank
 		custID = obj.nextInt();
 		System.out.println("Enter the account number: ");
 		accountNo = obj.nextInt();
-		Ssytem.out.println("Enter the customer name: ");
+		System.out.println("Enter the customer name: ");
 		custName = obj.next();
 		System.out.println("Enter the username you want to set: ");
 		custUserName=obj.next();
