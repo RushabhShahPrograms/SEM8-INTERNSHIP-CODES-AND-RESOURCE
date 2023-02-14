@@ -96,7 +96,27 @@ class Bank
             System.out.println("1) Create Customer");
             System.out.println("2) Display Customer");
             System.out.println("3) Exit");
-        }
+        } //End of showAdminMenu
+	
+	void createCustomer()
+	{
+		Scanner obj = new Scanner(System.in);
+		System.out.println("Enter the custid: ");
+		custID = obj.nextInt();
+		System.out.println("Enter the account number: ");
+		accountNo = obj.nextInt();
+		Ssytem.out.println("Enter the customer name: ");
+		custName = obj.next();
+		System.out.println("Enter the username you want to set: ");
+		custUserName=obj.next();
+		System.out.println("Enter the password: ");
+		custPassword=obj.next();
+	} //End of createCustomer
+	
+	void displayCustomer()
+	{
+		System.out.println(custID+"\t"+accountNo+"\t"+custUserName+"\t"+custPassword+"\t"+balance);
+	}
 }
 
 public class BankApplicationImplementation
@@ -105,13 +125,15 @@ public class BankApplicationImplementation
 	{
 		Scanner obj = new Scanner(System.in);
 		Bank objBank = new Bank();
+		Bank objBank1[]=new Bank[2];
 		while(true)
 		{
                         System.out.println("1) Admin Login");
                         System.out.println("2) Customer Login");
                         System.out.println("3) Exit");
                         int choice=obj.nextInt();
-                        switch(choice)
+                        
+			switch(choice)
                         {
                             case 1:System.out.println("Plese Enter username and password: ");
                                 String uAdmin=obj.next();
@@ -123,9 +145,17 @@ public class BankApplicationImplementation
                                     int choiceAdmin=obj.nextInt();
                                     switch(choiceAdmin)
                                     {
-                                        case 1: System.out.println("You have selected createCutomer");//createCustomer();
+                                        case 1: for(i=0;i<2;i++)
+					{
+						objBank1[i]=newBank();
+						objBank1[i].createCustomer();
+					}//createCustomer();
                                         break;
-                                        case 2: System.out.println("You have selected DisplayCustomer");//displayCustomer();
+                                        case 2: System.out.println("cid\taccount\tcname\tusername\tpassword\tbalance");
+						    for(int i=0;i<2;i++)
+						    {
+							    objBank1[i].displayCustomer();
+						    }//displayCustomer();
                                         break;
                                         case 3: System.out.println("Exit");
                                         break;
